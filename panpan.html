@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            /* font-family:Arial, Helvetica, sans-serif; */
+            font-variant:small-caps;
+        }
+        .clearfix:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:both;
+            overflow:hidden;
+            visibility:hidden;
+        }
+        #contain {
+            width: 100%;
+        }
+      .img-box {
+          width: 500px;
+          /* max-height: 300px; */
+          margin: 0 auto;
+      }
+      .message {
+          /* text-align: center; */
+          text-indent: 10px;
+          font-weight: bold;
+      }
+      .center {
+        text-align: center;
+      }
+      section {
+          position: relative;
+          min-height: 300px;
+      }
+      section>img {
+          position: absolute;
+          width: 500px;
+          height: 300px;
+          transition: 2s;
+      }
+      section> img:first-child {
+        z-index: 2;
+          /* opacity: 0; */
+      }
+      section> img:last-child {
+        z-index: 1;
+        /* opacity: 0; */
+        }
+        .tip {
+            text-align: center;
+            font-weight: 900;
+            margin-top: 20px;
+        }
+        .sec-img {
+            display: flex;
+            justify-content: space-around;
+        }
+        .sec-img img {
+          width: 550px;
+          height: 337px;
+          border-radius: 50%;
+        }
+        /* .sec-img:first-child {
+            width: ;
+        } */
+    </style>
+</head>
+<body>
+    <div id="contain" class="clearfix">
+        <h1>标题</h1>
+        <!-- 加 -->
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg" title="盼盼你几岁">
+                <img src="http://m.tuniucdn.com/fb2/t1/G1/M00/1E/54/Cii9EFdnpMeINxYJACRP5BicSg8AAGowgB6jEAAJE_8832_w500_h280_c1_t0.jpg" title="盼盼11">
+            </section>
+            <p class="message center">盼盼你是谁</p>
+        </div>
+        <!-- 加 -->
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg" title="盼盼">
+                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1589035587&di=11f95151a73b9652c3a7954b72718e30&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg" title="盼盼11">
+            </section>
+            <p class="message">盼盼你是谁我我我我我我盼盼你是谁我我我我我我盼盼你是谁我我我我我我盼盼你是谁我我我我我我盼盼你是谁我我我我我我</p>
+        </div>
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3252521864,872614242&fm=26&gp=0.jpg" title="盼盼">
+                <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1589035587&di=11f95151a73b9652c3a7954b72718e30&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg" title="盼盼11">
+            </section>
+            <p class="message">盼盼你是谁</p>
+        </div>
+        <div>
+            <p class="tip">二选一</p>
+            <div class="sec-img">
+                <img id="img1" src="https://img.ivsky.com/img/tupian/pre/201905/30/xuanzhuanmuma-007.jpg" title="选我">
+                <img id="img2" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589001200467&di=4a4d73450a1bedaf01828e386fbd9a2b&imgtype=0&src=http%3A%2F%2Fwww.sinaimg.cn%2Fhs%2F2012%2F0904%2FU4439P929DT20120904113513.jpg" title="选我">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function noshow(dom) {
+       dom.style.opacity = 0
+     //   dom.nextSibling.nextSibling.style.opacity = 1
+     // dom.parentNode.childNodes[1]
+     //    console.log(dom.parentNode.childNodes)  
+    }
+    const img1 = document.getElementById('img1')
+    const img2 = document.getElementById('img2')
+    img1.onclick = ()=> {
+        window.location.href = 'https://geng-en.github.io/private/%E7%A4%BC%E7%89%A9/%E7%A4%BC%E7%89%A9/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(3)/HTML5-Canvas-master/index.html'
+    }
+    img2.onclick = ()=> {
+        window.location.href = 'https://geng-en.github.io/private/%E7%A4%BC%E7%89%A9/%E7%A4%BC%E7%89%A9/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(3)/HTML5-Canvas-master/index.html'
+    }
+ </script>
+
+</html>

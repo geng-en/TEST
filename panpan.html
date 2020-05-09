@@ -102,13 +102,36 @@
                             </section>
                         </div>
                     </div>
-<img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg">
-    <script>
-      const img = document.querySelector('img')
-      img.onclick = () => {
-        window.location.href = 'http://www.baidu.com'
-      }
-    </script>
+<!--  点击图片跳转                                                      -->
+<div class="head">
+    <p>二选一</p>
+    <img src="https://www.ivsky.com/tupian/xuanzhuanmuma_v56515/pic_882595.html">
+  </div>
+  <script>
+    const img = document.querySelector('img')
+    img.onclick = () => {
+      window.location.href = 'https://geng-en.github.io/private/%E7%A4%BC%E7%89%A9/%E7%A4%BC%E7%89%A9/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(3)/HTML5-Canvas-master/index.html'
+    }
+    let timer = setInterval(()=> {
+      const head = document.querySelector('.head')
+      head.style.opacity = 1
+    }, 1000)
+  </script>
+  <style>
+    .head {
+      /* display: none; */
+      opacity: 0;
+      transition: 5s;
+    }
+    img{
+      display: block;
+      margin:0 auto;
+      border-radius: 50%;
+    }
+    p {
+      text-align: center;
+    }
+  </style>
 
     <script nonce="1694395695" type="text/javascript">
         function _toConsumableArray(r) {

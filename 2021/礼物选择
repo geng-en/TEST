@@ -1,1 +1,185 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=0.6,user-scalable=1">
+    <title>点礼物</title>
+    <style>
+         * {
+            margin: 0;
+            padding:0;
+        }
+        a {
+            text-decoration: none;
+            color: hotpink;
+        }
+        li {
+            list-style: none;
+        } 
+        /*游戏设置*/
+        body {
+
+        }
+
+        h1,#time {
+            display: block;
+            text-align: center;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+            background: url("../static/images/present/backgroud.jpg") no-repeat;
+            background-size: 500px;
+        }
+
+        .present {
+            float: left;
+            width: 70px;
+            height: 70px;
+            background-color: antiquewhite;
+            line-height: 70px;
+            color: #96681B;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-left: 20px;
+            margin-top: 5px;
+            border-radius: 50%;
+            box-shadow: 0 7px 16px rgba(122, 0, 0, 0.2);
+        }
+
+        .present:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            color: #96681B;
+        }
+
+        .select {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            color: #96681B;
+        }
+
+        #btn {
+            display: block;
+            margin: 10px auto;
+        }
+        .start_btn {
+            width: 90px;
+            line-height: 35px;
+            background: rgba(255, 0, 187, 0.775);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color:#fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .start_btn:hover {
+            box-shadow: 0px 10px 20px #cecece;
+        }
+        body {
+            background-image: url("https://tse3-mm.cn.bing.net/th/id/OIP-C.3LJTcPqaTA3rFn5Rm1xgfwHaEK?w=297&h=180&c=7&o=5&dpr=1.38&pid=1.7");
+        }
+    </style>
+</head>
+<body>
+<!-- 游戏设置 -->
+<h1>点到那个，送那个</h1>
+<span id="time"></span><!--相恋时间-->
+<!--开始按钮;-->
+<div id="box" class="box"></div>
+<input class="start_btn" type="button" value="开始" id="btn">
+<script>
+function my$(id) {//设置通过id获得元素
+    return document.getElementById(id);
+}
+//两个时间相差天数
+function timeSpan(Date1,Date2) {
+    var date1 = Date.parse(Date1);
+    var date2 = Date.parse(Date2);
+    var space = Math.abs(date1.valueOf()-date2.valueOf());
+    var timeSpace = parseInt(space/(24*60*60*1000));
+    return timeSpace;
+}
+/*
+*获得min到max的随机数
+**/
+function getRandom(min,max) {
+    return parseInt(Math.random()*(max-min)+min);
+}
+</script>
+<script>
+    //抽奖内容数组
+    var arr = ["鞋子", "袜子", "裤子", "裙子", "短袖",//衣服
+                "耳环", "项链", "手链", "发卡", "手表",//首饰
+                "钞票","金子","神秘礼物","银子","玉石",//金钱
+                "手机","电脑","钢笔","女包","吹风机",//物资
+                "基金","股票","理财","债券","保险",//财产
+    "胖恩礼包","胖恩红糖","胖恩美食","胖恩抱抱","胖恩的人"];//陪伴
+
+    //设置礼物
+    var boxNode = my$("box");
+    for (var i = 0; i < arr.length; i++) {
+        //创建礼物div
+        var presentNode = document.createElement("div");
+        presentNode.innerText = arr[i];
+        presentNode.className = "present";//设置礼物样式
+        boxNode.appendChild(presentNode);
+    }
+    
+    //设置开始点击事件
+    var lastPresent = "";//判断最后得到的礼物
+    var presentType = 0;//礼物类型
+    my$("btn").onclick = function () {
+        //设置随机钱数
+        var moneyMax=getRandom(1000,5000);
+        var moneyMin=getRandom(100,1000);
+        if (this.value == "开始") {
+            //定时
+            TimeId = setInterval(function () {
+                //清空颜色
+                for (var i = 0; i < arr.length; i++) {
+
+                    boxNode.children[i].style.background = "";
+                    boxNode.children[i].style.boxShadow = "";
+                }
+                var random = parseInt(Math.random() * arr.length);
+                boxNode.children[random].style.boxShadow = "0 15px 30px rgba(0, 0, 0, 0.5)";
+                boxNode.children[random].style.background = "#AE97E7";
+                lastPresent = arr[random];//记录按下停止时的礼物名字
+                presentType = random;//记录礼物类型
+            }, 100);
+            this.value = "停止";
+        } else {
+            //清除计时器
+            clearInterval(TimeId);
+            this.value = "开始";
+            //判断礼物类型
+            if (presentType < 5) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】衣服");
+            } else if (presentType < 10) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】首饰");
+            }else if (presentType < 15) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】金钱");
+            }else if (presentType < 20) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】物资");
+            }else if (presentType < 25) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】财产");
+            }else if (presentType < 30) {
+                alert("恭喜你获得了由大胖恩送出的"+"价值"+moneyMin+"--"+moneyMax+"元的【" + lastPresent + "】陪伴");
+            }
+        }
+    }
+    my$("btn").onmouseover = function (e) {
+        e.target.style.background.opacity = 0.1 
+    }
+    var spanNode = document.getElementById("time");
+    //调用时间
+    var days = timeSpan("2021-1-1", new Date());
+    spanNode.innerHTML = "相恋٩(๑❛ᴗ❛๑)۶：  " + days + "天";
+
+</script>
+</body>
+</html>

@@ -1,23 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>世间繁华</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0 maximum-scale=1.0">
+    <title>Our trip</title>
+    <!-- 改document -->
+    <style>
+        @media screen and (min-width: 320px) { html {font-size: 14px;} } @media screen and (min-width: 360px) { html {font-size: 16px;} } @media screen and (min-width: 400px) { html {font-size: 18px;} }
+        h1 {
+            text-align: center;
+            /* font-family:Arial, Helvetica, sans-serif; */
+            font-variant:small-caps;
+        }
+        .title {
+           text-align: center;
+           font-size:2rem;
+        }
+        .clearfix:after{
+            content:".";
+            display:block;
+            height:0;
+            clear:both;
+            overflow:hidden;
+            visibility:hidden;
+        }
+        body {
+            overflow: auto;
+        }
+        #contain {
+            width: 100%;
+        }
+      .img-box {
+          /* width: 500px; */
+          width: 75%;
+          /* max-height: 300px; */
+          margin: 0 auto;
+      }
+      .message {
+          /* text-align: center; */
+          text-indent: 10px;
+          font-weight: bold;
+      }
+      .center {
+        text-align: center;
+      }
+      section {
+          position: relative;
+          /* min-height: 300px; */
+          min-height: 17rem;
+      }
+      section>img {
+          position: absolute;
+          /* width: 5rem; */
+          width: 100%;
+          /* width: 500px; */
+          height: 17rem;
+          /* height: 300px; */
+          transition: 2s;
+      }
+      section> img:first-child {
+        z-index: 2;
+          /* opacity: 0; */
+      }
+      section> img:last-child {
+        z-index: 1;
+        /* opacity: 0; */
+        }
+        .tip {
+            text-align: center;
+            font-weight: 900;
+            margin-top: 20px;
+        }
+        .sec-img {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 4rem;
+        }
+        .sec-img img {
+            width: 30%;
+            height: 5rem;
+          /* width: 550px; */
+          /* height: 337px; */
+          border-radius: 50%;
+        }
+        /* .sec-img:first-child {
+            width: ;
+        } */
+    </style>
 </head>
 <body>
-    <div>
-      <h2>never give up</h2>
-      <p class="content">现在的我还无法带你去看尽世间繁华，只能带你去做旋转木马，请暂时忍耐，选另一张照片</p>
+    <div id="contain" class="clearfix">
+        <p class="title">Happy Brithday</p>
+        <!-- 加 -->
+        <div class="img-box">
+            <section>
+   
+                <img onclick="noshow(this)" src="./照片/1.jpg" title="I miss you">
+                <img src="./照片/2.jpg" title="I miss you">
+            </section>
+            <p class="message center">余生有你，顾盼留影</p>
+        </div>
+        <!-- 加 -->
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/3.jpg" title="盼盼">
+                <img src="./照片/4.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你一起去贝加尔湖畔，欣赏哪里的清澈与辽阔，天地一线，牵着手走在湖畔，映着晚霞，拉长我们的身影</p>
+        </div>
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/5.jpg" title="盼盼">
+                <img src="./照片/6.jpg" title="盼盼11">
+            </section>
+            <p class="message">我想与你走一走内蒙，那里不仅仅是绿草如茵，一望无际，还有一座青冢，传唱千古的奇女子王昭君，昔日古代四大美女之一，冠之落雁，可怜青冢已芜没，尚有哀弦留至今</p>
+        </div>
+        
+        
+        <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/7.jpg" title="I miss you">
+                <img src="./照片/8.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你去江南水乡，细雨缠绵，油纸伞下相拥而行，诗情画意。我想和你去青岛，举世闻名的啤酒之都，傍晚吃着海鲜，喝着啤酒，恰意海边</p>
+        </div>
+		
+		
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/9.jpg" title="I miss you">
+                <img src="./照片/10.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你去甘肃，敦煌莫高窟，千洞佛中话缠绵，千里黄沙落日圆</p>
+        </div>		
+		
+
+
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/11.jpg" title="I miss you">
+                <img src="./照片/12.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你去洛阳，六朝古都，龙门石窟，大佛前许愿；牡丹盛开，国色天香，与你的容颜一般无二；老君山上不老愿</p>
+        </div>
+		
+		
+			
+		
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/13.jpg" title="I miss you">
+                <img src="./照片/14.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你去西安，跨越千年看长安，兵马俑，知始皇，盛世唐朝，万国来朝，说不尽的长安事；我花开后百花杀，冲天香气透长安</p>
+        </div>
+		
+
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/15.jpg" title="I miss you">
+                <img src="./照片/16.jpg" title="I miss you">
+            </section>
+            <p class="message">我想和你去云南大理，去看那里的彼岸花，曼陀罗华，花开彼岸天；苍山洱海，风花雪月与云卷云舒</p>
+        </div>
+		
+		
+		
+		
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/17.jpg" title="I miss you">
+                <img src="./照片/18.jpg" title="I miss you">
+            </section>
+            <p class="message">不要害怕前路漫漫，同行的人不会走散</p>
+        </div>
+		
+		
+		
+		
+		
+		
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/19.jpg" title="I miss you">
+                <img src="./照片/20.jpg" title="I miss you">
+            </section>
+            <p class="message">一场说走就走的旅行以及一段岁月的守候</p>
+        </div>
+		
+		
+		
+ <div class="img-box">
+            <section class="clearfix">
+                <img onclick="noshow(this)" src="./照片/21.jpeg" title="I miss you">
+                <img src="./照片/22.jpg" title="I miss you">
+            </section>
+            <p class="message">岁月静好，烟火依旧，我们的距离不过天涯咫尺</p>
+        </div> 
+        
+        
+        
+        
+        
+        
+        <div>
+            <p class="tip">二选一</p>
+            <div class="sec-img">
+                <img id="img1" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589001200467&di=4a4d73450a1bedaf01828e386fbd9a2b&imgtype=0&src=http%3A%2F%2Fwww.sinaimg.cn%2Fhs%2F2012%2F0904%2FU4439P929DT20120904113513.jpg" title="世间繁华">
+                <img id="img2" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589092482678&di=ef28145ec118f72d45ada629f6a9e0e5&imgtype=0&src=http%3A%2F%2Fimg1.cache.netease.com%2Fcatchpic%2F3%2F38%2F384FBEDC5A5653D177D7D991485380FD.jpg" title="旋转木马">
+            </div>
+        </div>
     </div>
-    <style>
-        h2 {
-            text-align: center;
-        }
-        .content {
-            width: 80%;
-            margin: 0 auto;
-        }
-    </style>
 </body>
+<script>
+    function noshow(dom) {
+       dom.style.opacity = 0
+     //   dom.nextSibling.nextSibling.style.opacity = 1
+     // dom.parentNode.childNodes[1]
+     //    console.log(dom.parentNode.childNodes)  
+    }
+    const img1 = document.getElementById('img1')
+    const img2 = document.getElementById('img2')
+    img1.onclick = ()=> {
+        window.location.href = 'https://geng-en.github.io/private/honey.html'
+    }
+    img2.onclick = ()=> {
+        window.location.href = 'https://geng-en.github.io/private/%E7%A4%BC%E7%89%A9/%E7%A4%BC%E7%89%A9/%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%20(3)/HTML5-Canvas-master/index.html'
+    }
+ </script>
+
 </html>
